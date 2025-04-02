@@ -36,32 +36,11 @@ tsParticles.load("particles-js", {
 
 function showLoadingAndThen(action) {
   const loadingScreen = document.getElementById("loadingScreen");
-  const loadingFill = document.getElementById("loadingFill");
-  const loadingPercent = document.getElementById("loadingPercent");
-
   loadingScreen.classList.add("show");
-
-  let progress = 0;
-
-  const interval = setInterval(() => {
-    // Increase progress randomly between 3–8%
-    const step = Math.floor(Math.random() * 6) + 3;
-    progress += step;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(interval);
-      setTimeout(() => {
-        action();
-      }, 500); // brief pause after full
-    }
-
-    // Update bar + percent text
-    loadingFill.style.width = progress + "%";
-    loadingPercent.textContent = progress + "%";
-  }, 250); // repeat every 0.25s
+  setTimeout(() => {
+    action();
+  }, 2500);
 }
-
-
 
 document.getElementById('yesBtn').addEventListener('click', () => {
   try { confetti(); } catch (e) { console.warn("Confetti failed."); }
