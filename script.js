@@ -36,11 +36,27 @@ tsParticles.load("particles-js", {
 
 function showLoadingAndThen(action) {
   const loadingScreen = document.getElementById("loadingScreen");
+  const loadingFill = document.getElementById("loadingFill");
+  const loadingPercent = document.getElementById("loadingPercent");
+
   loadingScreen.classList.add("show");
-  setTimeout(() => {
-    action();
-  }, 2500);
+
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += Math.floor(Math.random() * 10) + 5; // randomize the load
+    if (progress > 100) progress = 100;
+    loadingFill.style.width = progress + "%";
+    loadingPercent.textContent = progress + "%";
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        action();
+      }, 600);
+    }
+  }, 200);
 }
+
 
 document.getElementById('yesBtn').addEventListener('click', () => {
   try { confetti(); } catch (e) { console.warn("Confetti failed."); }
