@@ -143,22 +143,16 @@ button:hover {
 }
 
 /* Loading Screen */
-#loadingScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(243, 229, 245, 0.95);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
+.loading-title::after {
+  content: "_";
+  animation: blink 1s steps(2, start) infinite;
 }
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 
 #loadingScreen.show {
   opacity: 1;
