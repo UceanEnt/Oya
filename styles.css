@@ -248,12 +248,12 @@ button:hover {
 }
 
 .intro-image {
-  max-width: 100%;
+  width: 100px;         /* You can adjust this size */
   height: auto;
+  display: block;
+  margin: 1.5rem auto;
   border-radius: 1.5rem;
-  margin-top: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
