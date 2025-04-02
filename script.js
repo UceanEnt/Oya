@@ -42,20 +42,25 @@ function showLoadingAndThen(action) {
   loadingScreen.classList.add("show");
 
   let progress = 0;
-  const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 10) + 5; // randomize the load
-    if (progress > 100) progress = 100;
-    loadingFill.style.width = progress + "%";
-    loadingPercent.textContent = progress + "%";
 
+  const interval = setInterval(() => {
+    // Increase progress randomly between 3–8%
+    const step = Math.floor(Math.random() * 6) + 3;
+    progress += step;
     if (progress >= 100) {
+      progress = 100;
       clearInterval(interval);
       setTimeout(() => {
         action();
-      }, 600);
+      }, 500); // brief pause after full
     }
-  }, 200);
+
+    // Update bar + percent text
+    loadingFill.style.width = progress + "%";
+    loadingPercent.textContent = progress + "%";
+  }, 250); // repeat every 0.25s
 }
+
 
 
 document.getElementById('yesBtn').addEventListener('click', () => {
