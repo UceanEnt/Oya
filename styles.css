@@ -1,44 +1,27 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0e8ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+// Initialize AOS animations
+AOS.init({ duration: 1200 });
 
-.container {
-  text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+// Initialize tsParticles (Sparkle Background)
+tsParticles.load("particles-js", {
+  particles: {
+    number: { value: 100 },
+    shape: { type: "star" },
+    size: { value: 2 },
+    move: { speed: 0.5 },
+    opacity: { value: 0.6 },
+    color: { value: "#ffffff" },
+    line_linked: { enable: false }
+  }
+});
 
-h1 {
-  color: #6a0dad;
-}
+// Button Actions
+document.getElementById('yesBtn').addEventListener('click', () => {
+  confetti();
+  setTimeout(() => {
+    window.location.href = 'https://wa.me/8765716535?text=Yes!%20I%27d%20love%20to%20be%20your%20friend!';
+  }, 2500);
+});
 
-p {
-  font-size: 1.2em;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-button {
-  background-color: #6a0dad;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 1em;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #5a0cad;
-}
+document.getElementById('noBtn').addEventListener('click', () => {
+  alert("That's okay, I'll be around if you change your mind!");
+});
