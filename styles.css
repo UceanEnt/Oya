@@ -179,7 +179,6 @@ button:hover {
   height: 100%;
   background: url('https://i.imgur.com/7aYs6VF.jpeg') center center / cover no-repeat;
   opacity: 0.15;
-  filter: brightness(0.95) contrast(1.1) saturate(1.2);
   animation: slowZoom 40s ease-in-out infinite alternate;
   z-index: -3;
 }
