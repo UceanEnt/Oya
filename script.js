@@ -25,7 +25,7 @@ function showLoadingAndThen(action) {
 }
 
 document.getElementById('yesBtn').addEventListener('click', () => {
-  confetti();
+  try { confetti(); } catch (e) { console.warn("Confetti failed."); }
   showLoadingAndThen(() => {
     window.location.href = 'https://wa.me/8765716535?text=Yes!%20I%27d%20love%20to%20be%20your%20friend!';
   });
@@ -36,4 +36,3 @@ document.getElementById('noBtn').addEventListener('click', () => {
     alert("That's okay, I'll be around if you change your mind!");
   });
 });
-
