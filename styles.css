@@ -1,3 +1,12 @@
+:root {
+  color-scheme: light; /* This tells browsers to treat everything as light-themed */
+}
+
+body {
+  background-color: #f3e5f5; /* or your existing gradient */
+  color: #333;
+}
+
 /* Reset + base styles */
 * {
   margin: 0;
