@@ -182,8 +182,9 @@ button:hover {
   width: 0%;
   height: 100%;
   background: #ba68c8;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
+
 
 .loading-percent {
   font-size: 0.9rem;
