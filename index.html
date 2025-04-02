@@ -1,95 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A Dreamy Proposal for Oya</title>
+/* Reset + base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f3e5f5, #d1c4e9);
+  color: #333;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  <div id="particles-js"></div>
-  <div class="background-image"></div>
+/* Content wrapper */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+}
 
-  <main class="content">
-    <!-- Greeting Section -->
-    <div class="container" data-aos="zoom-in">
-      <div class="intro">
-        <h1>🌸 Hey Oya! 🌸</h1>
-        <p>I think you're super cool and funny, and charming and I would love to be your friend🥺</p>
-<img class="intro-image" src="https://i.imgur.com/YhvkTEB.png" alt="Celestial Greeting" />
-      </div>
+/* Particles container */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
 
-    <!-- Friendship Reasons (No container box) -->
-    
-<div class="reasons" data-aos="fade-up">
-  <h2>Why you should be my friend😌</h2>
- <p class="learn-more-text">Tap the buttons to explore ✨</p>
-</div>
+/* Main content */
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-  <div class="reasons-grid">
-    <div class="reason">
-      🍜 Food Adventures
-      <div class="dropdown">I love trying new food or experimenting with random snacks and meals (some good, some... chaotic) — food is an experience I’d love to share with you.</div>
-    </div>
-    <div class="reason">
-      🧠 Deep Conversations
-      <div class="dropdown">I enjoy talking about the big things — like art, life, the future, and why time feels fake sometimes. We can wonder, question everything, and maybe figure out nothing... but in a meaningful way.</div>
-    </div>
-    <div class="reason">
-      🎨 Weird Art & Nonsense
-      <div class="dropdown">I love art -sometimes I make strange little poems or dream-inspired sketches. I also get way too excited about things that don’t make sense but *feel* right. If you ever feel like being weird or whimsical, I’m your person.</div>
-    </div>
-    <div class="reason">
-      📸 Cool Photos of You
-      <div class="dropdown">I’ll make you look iconic. Candid, styled, casual — whatever works for you. I love capturing people, and I’d love to capture you. Plus, you get free pics for the gram.</div>
-    </div>
-    <div class="reason">
-      🌱 Endless Support
-      <div class="dropdown">I’ll always root for you. Whether you’re going through it, trying something new, or just need someone to talk to — I got you. No pressure, no judgment. Just pure, consistent support.</div>
-    </div>
-  </div>
-</div>
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6a1b9a;
+}
 
-    <!-- Question Section -->
-    <div class="container" data-aos="fade-up">
-      <div class="question-section">
-        <div class="gif-container" data-aos="fade-up">
-  <img class="friend-gif" src="https://media.tenor.com/XlAUYlWB4skAAAAM/pleas-please.gif" alt="Pleading Cat Gif" />
-</div>
-<p class="question">Would you like to be friends?</p>
+.container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #4a148c;
+}
 
-        <div class="buttons">
-          <button id="yesBtn">Absolutely ✨</button>
-          <button id="noBtn">Nahhhh 🥀</button>
-        </div>
-      </div>
-    </div>
-  </main>
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
 
- <div id="loadingScreen">
-  <div class="loading-box">
-    <p class="loading-title">✨ Initiating Friendship Protocol... ✨</p>
-    <div class="loading-bar">
-      <div class="loading-fill" id="loadingFill"></div>
-    </div>
-    <p class="loading-percent" id="loadingPercent">0%</p>
-  </div>
-</div>
+button {
+  background: #ba68c8;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ab47bc;
+}
+
+#noBtn {
+  position: relative;
+}
+
+#noBtn:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Reasons Section */
+.reasons {
+  margin-top: 3rem;
+  text-align: center;
+  color: #6a1b9a;
+}
+
+.reasons h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.reasons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.reason {
+  background: #fff3fc;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(106, 27, 154, 0.1);
+  transition: transform 0.3s;
+  font-weight: 500;
+}
+
+.reason:hover {
+  transform: scale(1.05);
+}
+
+/* Loading Screen */
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(243, 229, 245, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#loadingScreen.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loader {
+  border: 4px solid #e1bee7;
+  border-top: 4px solid #6a1b9a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Background Image Layer */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.imgur.com/7aYs6VF.jpeg') center center / cover no-repeat;
+  opacity: 0.15;
+  animation: slowZoom 40s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+.intro {
+  margin-bottom: 2rem;
+}
+
+.question-section {
+  margin-top: 2rem;
+}
+
+.question {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .reasons-grid {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .reason {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.reason {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.reason:hover {
+  transform: scale(1.03);
+}
+.dropdown {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #4a148c;
+  display: none;
+  text-align: left;
+}
+.reason.open .dropdown {
+  display: block;
+}
+
+.intro-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.sure-message {
+  font-size: 1rem;
+  color: #6a1b9a;
+  margin-top: 1rem;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#secondChanceBtn {
+  margin-top: 0.75rem;
+  background-color: #ce93d8;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#secondChanceBtn:hover {
+  background-color: #ba68c8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script src="script.js"></script>
-
-<footer class="footer">
-  <p>🌙 Coded by Gavin for Oya 2025</p>
-</footer>
-
-</body>
-</html>
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6a1b9a;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
