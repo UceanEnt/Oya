@@ -346,14 +346,14 @@ button:hover {
 
 /* Middle layer: stars/clouds */
 .layer-middle {
-  background-image: url('https://i.imgur.com/x7IuDgX.png'); /* semi-transparent stars/clouds */
+  background-image: url('https://i.pinimg.com/736x/5c/52/9c/5c529ce7efd40371f7284d95d26071ed.jpg'); /* semi-transparent stars/clouds */
   animation: scrollMiddle 100s linear infinite;
   z-index: -9;
 }
 
 /* Front layer: sparkles/hearts/whatever */
 .layer-front {
-  background-image: url('https://i.imgur.com/w7jplU1.png'); /* subtle shapes/sparkles */
+  background-image: url('https://i.imgur.com/TFhrU5J.png'); /* subtle shapes/sparkles */
   animation: scrollFront 60s linear infinite;
   z-index: -8;
 }
