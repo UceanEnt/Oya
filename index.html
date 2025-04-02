@@ -1,120 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oya, Will You Be My Friend?</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 2;
-        }
-
-        h1 {
-            color: #444;
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .buttons button {
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin: 10px;
-        }
-
-        .yes {
-            background-color: #77dd77;
-            color: white;
-        }
-
-        .no {
-            background-color: #ff6961;
-            color: white;
-        }
-
-        .buttons button:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes sparkle {
-            from {opacity: 1; transform: translateY(0);}
-            to {opacity: 0; transform: translateY(-20px);}
-        }
-
-        .sparkle {
-            position: absolute;
-            background-color: #fff;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #fff;
-            animation: sparkle 1.5s infinite ease-out;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Dreamy Proposal for Oya</title>
+  
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>✨ Oya, will you be my friend? ✨</h1>
+  <!-- Sparkly Particles Container -->
+  <div id="particles-js"></div>
+
+  <div class="container" data-aos="zoom-in">
+    <h1>Hey Oya! 🌠</h1>
+    <p>I genuinely think you're super cool, funny, and charming. Can we officially be friends?</p>
     <div class="buttons">
-        <button class="yes" onclick="acceptProposal()">Yes!</button>
-        <button class="no" onclick="declineProposal()">Nope</button>
+      <button id="yesBtn">Absolutely ✨</button>
+      <button id="noBtn">Nahhhh 🙈</button>
     </div>
-</div>
+  </div>
 
-<script>
-    function acceptProposal() {
-        confetti({ particleCount: 150, spread: 120 });
-        setTimeout(() => {
-            window.location.href = 'https://wa.me/18765716535';
-        }, 1500);
-    }
-
-    function declineProposal() {
-        alert("Aw, maybe another time!");
-    }
-
-    function createSparkle() {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
-        sparkle.style.top = Math.random() * 100 + 'vh';
-        sparkle.style.left = Math.random() * 100 + 'vw';
-        document.body.appendChild(sparkle);
-
-        setTimeout(() => {
-            sparkle.remove();
-        }, 1500);
-    }
-
-    setInterval(createSparkle, 200);
-</script>
-
+  <!-- JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
