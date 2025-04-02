@@ -18,7 +18,7 @@ body {
   position: relative;
 }
 
-/* Particles container full screen */
+/* Particles container */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -28,7 +28,7 @@ body {
   left: 0;
 }
 
-/* Main content container */
+/* Main content */
 .container {
   background: rgba(255, 255, 255, 0.8);
   padding: 3rem;
@@ -74,7 +74,6 @@ button:hover {
   background: #ab47bc;
 }
 
-/* No button sneaky wiggle */
 #noBtn {
   position: relative;
 }
@@ -90,6 +89,8 @@ button:hover {
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
+
+/* Reasons Section */
 .reasons {
   margin-top: 3rem;
   text-align: center;
@@ -121,7 +122,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Loading screen */
+/* Loading Screen */
 #loadingScreen {
   position: fixed;
   top: 0;
@@ -158,140 +159,3 @@ button:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.reasons {
-  margin-top: 3rem;
-  text-align: center;
-  color: #6a1b9a;
-}
-
-.reasons h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.reasons-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.reason {
-  background: #fff3fc;
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 5px 15px rgba(106, 27, 154, 0.1);
-  transition: transform 0.3s;
-  font-weight: 500;
-}
-
-.reason:hover {
-  transform: scale(1.05);
-}
-
-/* Loading screen */
-#loadingScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(243, 229, 245, 0.95);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-#loadingScreen.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.loader {
-  border: 4px solid #e1bee7;
-  border-top: 4px solid #6a1b9a;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.reasons {
-  margin-top: 3rem;
-  text-align: center;
-  color: #6a1b9a;
-}
-
-.reasons h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.reasons-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.reason {
-  background: #fff3fc;
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 5px 15px rgba(106, 27, 154, 0.1);
-  transition: transform 0.3s;
-  font-weight: 500;
-}
-
-.reason:hover {
-  transform: scale(1.05);
-}
-
-/* Loading screen */
-#loadingScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(243, 229, 245, 0.95);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-#loadingScreen.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.loader {
-  border: 4px solid #e1bee7;
-  border-top: 4px solid #6a1b9a;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
